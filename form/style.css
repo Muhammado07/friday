@@ -425,6 +425,12 @@ input[type="number"] {
   width: 35px;
   height: 35px;
 }
+.side-form .pop-content .thank-u .social .use {
+  padding-bottom: 10px;
+}
+.side-form .pop-content .thank-u .social .use span {
+  font-family: "GE Dinar One Bold" !important;
+}
 
 @media screen and (max-width: 767px) {
   .side-form .pop-content .thank-u h2 {
