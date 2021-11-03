@@ -303,6 +303,7 @@ a {
   font-size: 11px;
   margin-top: 10px;
   opacity: 0.8;
+  text-decoration: underline;
 }
 .side-form .pop-content p {
   color: var(--third-color);
