@@ -149,7 +149,7 @@ a {
     background-color: #00539e6e;
   }
   .nav .logo {
-    width: 170px;
+    width: 110px;
     height: auto;
   }
   .navbar .info-mob .toggle {
@@ -233,6 +233,16 @@ a {
 @media screen and (max-width: 414px) {
   .cool-friday .details {
     padding-top: 180px;
+  }
+}
+@media screen and (max-width: 376px) {
+  .cool-friday .details {
+    padding-top: 220px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .cool-friday .details {
+    padding-top: 160px;
   }
 }
 
