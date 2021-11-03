@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scratch New</title>
+    <style>
+      @font-face {
+        font-family: "Maurea-BoldLf";
+        src: url("fonts/Maurea-BoldLf.otf") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "MaureaJciLfML-Medium";
+        src: url("fonts/MaureaJciLfML-Medium.otf") format("opentype");
+        font-weight: lighter;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "MaureaJciLfML-Regular";
+        src: url("fonts/MaureaJciLfML-Regular.otf") format("opentype");
+        font-weight: lighter;
+        font-style: normal;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html {
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        color: #151515;
+      }
+      h2,
+      h3 {
+        font-family: "Maurea-BoldLf";
+      }
+      p {
+        font-family: "MaureaJciLfML-Medium";
+      }
+      span {
+        font-family: "MaureaJciLfML-Regular";
+      }
+      .hero-bg {
+        background: url("https://york.com.sa/images/uploaded/media-center/scratch-new.jpg")
+          center center no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
+      .thank-you {
+        font-family: "Maurea-BoldLf";
+        color: #fff;
+        position: absolute;
+        top: 0%;
+        right: 15%;
+        height: 100vh;
+        width: 600px;
+      }
+
+      .thank-you .success-img img,
+      .thank-you .flow .winy img {
+        width: 100%;
+        height: 100%;
+      }
+      .scratch .win {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+      }
+      .scratch .win .des h2 {
+        font-size: 38px;
+        font-weight: bold;
+        padding-bottom: 20px;
+      }
+      .scratch .win .des h2 {
+        font-size: 38px;
+        font-weight: bold;
+        padding-bottom: 20px;
+      }
+      .scratch .win .des h4,
+      .scratch .win .des p {
+        font-size: 20px;
+      }
+      .scratch .win .des p {
+        text-align: center;
+        padding: 15px 0;
+      }
+      .scratch .infos h4 {
+        padding-bottom: 10px;
+        font-size: 18px;
+      }
+      .scratch .infos h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        margin-top: 40px;
+        font-family: "Maurea-BoldLf" !important;
+      }
+      .scratch .info h3 {
+        margin-top: 20px;
+      }
+      .info p {
+        margin: 10px auto;
+      }
+      .box span {
+        display: block;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: #fff;
+        pointer-events: none;
+        border-radius: 50%;
+      }
+      .box p {
+        padding: 30px 40px 15px;
+        z-index: 1;
+        color: #000;
+      }
+      .icon-pin::before {
+        content: "\1433";
+      }
+
+      .thank-you .flow {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .thank-you .num {
+        margin-top: 30px;
+      }
+      .thank-you .num .serial {
+        font-weight: bold;
+      }
+      .thank-you .flow .winy {
+        width: 200px;
+        height: auto;
+        margin: 5px auto;
+      }
+      .thank-you .flow {
+        margin-top: 150px;
+      }
+      .bank-img {
+        margin-top: 20px;
+      }
+      .bank-img,
+      .bank-img div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+      }
+      .bank-img div {
+        flex-direction: column;
+        margin-right: 30px;
+      }
+      .bank-img img {
+        width: 100%;
+        height: 45px;
+        margin-bottom: 10px;
+      }
+      .bank-img a {
+        text-decoration: none;
+        color: #085697;
+        transition: 0.3s;
+      }
+      .bank-img a:hover {
+        opacity: 0.7;
+      }
+
+      .boxs {
+        background: url("https://york.com.sa/images/uploaded/media-center/gold.jpg")
+          center center no-repeat;
+        background-size: cover;
+        position: relative;
+        width: 367px;
+        height: 81px;
+        margin: 0 auto;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .boxs .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+      .boxs .form p {
+        margin: 30px auto 0;
+      }
+      .boxs .form h2 {
+        color: #fff;
+      }
+      .york-air {
+        width: 300px;
+        height: auto;
+        position: absolute;
+        top: 5%;
+      }
+      .york-air img {
+        width: 100%;
+        height: 100%;
+      }
+      @media screen and (max-width: 767px) {
+        .thank-you {
+          width: 100%;
+          right: 0;
+        }
+        .scratch .info h3 {
+          font-size: 32px;
+        }
+        .thank-you .flow {
+          grid-template-columns: 1fr;
+        }
+        .thank-you .flow .winy {
+          margin: 0 auto 20px;
+        }
+        .scratch .box {
+          width: 100%;
+        }
+        .flip {
+          width: 100%;
+          height: 100% !important;
+        }
+        .pins p {
+          text-align: center !important;
+        }
+        .flip img {
+          width: 100% !important;
+          height: 100%;
+          background-size: cover;
+          object-fit: fill;
+        }
+        .shape-img {
+          padding: 10px 10px 60px;
+        }
+        .shape-img,
+        .shape-img img {
+          height: 100% !important;
+        }
+        .shape-btn {
+          bottom: 5px;
+          left: 28px !important;
+        }
+        .pins img {
+          left: 7% !important;
+        }
+        .bank-img {
+          flex-direction: column;
+        }
+        .bank-img div {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+      @media screen and (max-width: 340px) {
+        .thank-you {
+          width: 100%;
+        }
+        .scratch .win .des h2 {
+          font-size: 26px;
+        }
+        .thank-you .flow {
+          margin-top: 100px;
+        }
+        .boxs {
+          width: 100% !important;
+          height: 45px;
+        }
+        .form h2 {
+          font-size: 18px !important;
+          margin-top: 18px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero-bg">
+      <div class="thank-you">
+        <div class="container">
+          <div class="scratch">
+            <div class="container">
+              <div class="win">
+                <div class="details">
+                  <div class="des">
+                    <h2>Thank you for <br />shopping with us!</h2>
+                    <h4>Your order is confirmed.</h4>
+                    <p>Order number: <span class="serial">500008458</span></p>
+                  </div>
+                </div>
+                <div class="infos">
+                  <h4>To apply for installments, please contact your bank.</h4>
+                  <h3>Are You A Winner, Or Not?</h3>
+                </div>
+                <div class="boxs" id="js-container">
+                  <canvas
+                    class="canvas"
+                    id="js-canvas"
+                    width="369"
+                    height="83"
+                  ></canvas>
+                  <div class="form" style="visibility: hidden">
+                    <h2>
+                      Congratulations! <br />
+                      You Won Free AC Split
+                    </h2>
+
+                    <!-- Loose Message -->
+                    <!-- <h2>
+                      Better Luck Next Time!
+                    </h2> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+    <script src="scratch.js"></script>
+  </body>
+</html>
