@@ -227,12 +227,12 @@ a {
   }
   .cool-friday .details {
     grid-template-columns: 1fr;
-    padding-top: 380px;
+    padding-top: 320px;
   }
 }
 @media screen and (max-width: 414px) {
   .cool-friday .details {
-    padding-top: 200px;
+    padding-top: 180px;
   }
 }
 
