@@ -402,121 +402,27 @@ input[type="number"] {
 /* ===========================
     ======== THANK YOU =========
     ============================ */
-
-.thank-you {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  overflow-x: hidden;
+.side-form .pop-content .thank-u {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--third-color);
 }
-.thank-you .thank-content {
+.side-form .pop-content .thank-u .icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
+  margin: 20px 0;
 }
-.thank-you .thank-content .img {
-  width: 100px;
-  height: auto;
-}
-.thank-you .thank-content .img img {
-  width: 100%;
-  height: 100%;
-}
-.thank-you .thank-content .details {
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-.thank-you .thank-content h1 {
-  font-size: 55px;
-  color: var(--second-color);
-}
-.thank-you .thank-content p {
-  font-size: 18px;
-  color: var(--second-color);
-  margin: 15px 0 0;
-}
-.thank-you .thank-content .back-home.mob {
-  display: none;
-}
-.thank-you .thank-content .back-home img {
-  width: 800px;
-  height: auto;
-  background-size: cover;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-.thank-you .thank-content .back-home:hover {
-  opacity: 0.9;
-}
-.thank-you .thank-content .social {
-  margin-top: 5px;
-}
-.thank-you .thank-content .social h3 {
-  font-size: 26px;
-  color: var(--second-color);
-}
-.thank-you .thank-content .social .icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
-.thank-you .thank-content .social .icons a {
+.side-form .pop-content .thank-u .icons a {
   margin: 0 10px;
 }
-.thank-you .thank-content .social .icons a img {
-  width: 40px;
-  height: 40px;
-}
-@media screen and (max-width: 767px) {
-  .thank-you .thank-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    justify-content: space-evenly;
-  }
-  .thank-you .thank-content p {
-    font-size: 18px;
-  }
-  .thank-you .thank-content .back-home {
-    display: none;
-  }
-  .thank-you .thank-content .back-home.mob {
-    display: block;
-  }
-  .thank-you .thank-content .back-home img {
-    width: 100%;
-    height: auto;
-    padding: 0 20px;
-    margin-top: 0;
-  }
-  .thank-you .thank-content .details {
-    margin-top: 5px;
-    margin-bottom: 0;
-  }
-  .thank-you .thank-content .img {
-    width: 40px;
-  }
-  .thank-you .thank-content h1 {
-    font-size: 36px;
-  }
-  .thank-you .thank-content p {
-    padding: 0 10px 10px 10px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .thank-you .thank-content p {
-    font-size: 14px;
-  }
-  .thank-you .thank-content .social h3 {
-    font-size: 18px;
-  }
+.side-form .pop-content .thank-u .icons a img {
+  width: 35px;
+  height: 35px;
 }
 /* ========================================
 =================== ARABIC ==================
