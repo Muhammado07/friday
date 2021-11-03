@@ -374,6 +374,10 @@ input[type="number"] {
   .formbox {
     width: 100%;
   }
+  .pop-content .formbox-titles {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
 }
 @media screen and (max-width: 480px) {
   .pop-form .pop-content .combin {
