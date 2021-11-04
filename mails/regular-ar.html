@@ -4,23 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scratch New</title>
-
+    <title>Cool Friday</title>
     <style>
       body {
         direction: rtl;
       }
       @font-face {
-        font-family: "GEDinarOne-Bold";
-        src: url("fonts/GEDinarOne-Bold.otf") format("opentype");
-        font-weight: normal;
+        font-family: "GE Dinar One Bold";
+        src: url("fonts/GE\ Dinar\ One\ Bold.otf") format("opentype");
+        font-weight: bold;
         font-style: normal;
       }
 
       @font-face {
-        font-family: "GE-Dinar-One-Medium";
-        src: url("fonts/GE-Dinar-One-Medium.otf") format("opentype");
-        font-weight: lighter;
+        font-family: "GE Dinar One Medium";
+        src: url("fonts/GE\ Dinar\ One\ Medium.otf") format("opentype");
+        font-weight: medium;
         font-style: normal;
       }
       * {
@@ -36,26 +35,32 @@
       h3,
       h4,
       p {
-        color: #151515;
+        color: #fff;
       }
       h2,
       h3 {
-        font-family: "GEDinarOne-Bold";
+        font-family: "GE Dinar One Bold";
       }
       p,
       span {
-        font-family: "GE-Dinar-One-Medium";
+        font-family: "GE Dinar One Medium";
       }
       .hero-bg {
-        background: url("https://york.com.sa/images/uploaded/media-center/scratch-new.jpg")
+        background: url("https://york.com.sa/images/uploaded/york-friday/hero-bg.jpg")
           center center no-repeat;
         background-size: cover;
         width: 100%;
         height: 100vh;
         position: relative;
       }
+      @media screen and (max-width: 767px) {
+        .hero-bg {
+          background: url("https://york.com.sa/images/uploaded/york-friday/hero-mob.jpg")
+            center center no-repeat;
+        }
+      }
       .thank-you {
-        font-family: "Maurea-BoldLf";
+        font-family: "GE Dinar One Bold";
         color: #fff;
         position: absolute;
         top: 0%;
@@ -63,6 +68,7 @@
         height: 100vh;
         width: 600px;
       }
+
       .thank-you .success-img img,
       .thank-you .flow .winy img {
         width: 100%;
@@ -77,6 +83,14 @@
         width: 100%;
         height: 100vh;
       }
+      @media screen and (max-width: 767px) {
+        .scratch .win {
+          background: rgba(255, 255, 255, 0.2);
+          margin: 0 auto;
+          border-radius: 5px;
+          backdrop-filter: blur(2px);
+        }
+      }
       .scratch .win .des h2 {
         font-size: 38px;
         font-weight: bold;
@@ -90,20 +104,26 @@
       .scratch .win .des h4,
       .scratch .win .des p {
         font-size: 20px;
+        font-family: "GE Dinar One Bold";
       }
       .scratch .win .des p {
         text-align: center;
         padding: 15px 0;
       }
       .scratch .infos h4 {
+        font-family: "GE Dinar One Bold";
         padding-bottom: 10px;
         font-size: 18px;
       }
       .scratch .infos h3 {
+        font-family: "GE Dinar One Bold";
         font-size: 28px;
         margin-bottom: 10px;
         margin-top: 40px;
-        font-family: "GEDinarOne-Bold";
+        /* color: #00539e; */
+      }
+      .scratch .info h3 {
+        margin-top: 20px;
       }
       .info p {
         margin: 10px auto;
@@ -116,6 +136,7 @@
         background: #fff;
         pointer-events: none;
         border-radius: 50%;
+        font-family: "GE Dinar One Bold";
       }
       .box p {
         padding: 30px 40px 15px;
@@ -145,9 +166,6 @@
         margin: 5px auto;
       }
 
-      .scratch .info h3 {
-        margin-top: 20px;
-      }
       .thank-you .flow {
         margin-top: 150px;
       }
@@ -214,6 +232,9 @@
       .boxs .form p {
         margin: 30px auto 0;
       }
+      .boxs .form h2 {
+        color: #fff;
+      }
       .york-air {
         width: 300px;
         height: auto;
@@ -226,11 +247,17 @@
       }
       @media screen and (max-width: 767px) {
         .thank-you {
-          font-family: "GEDinarOne-Bold";
           width: 100%;
+          right: 0;
+        }
+        .scratch .win {
+          margin-left: 0;
         }
         .scratch .info h3 {
           font-size: 32px;
+        }
+        .thank-you {
+          width: 100%;
         }
         .thank-you .flow {
           grid-template-columns: 1fr;
@@ -268,13 +295,6 @@
         .pins img {
           left: 7% !important;
         }
-        .bank-img {
-          flex-direction: column;
-        }
-        .bank-img div {
-          margin-right: 0;
-          margin-bottom: 20px;
-        }
       }
       @media screen and (max-width: 340px) {
         .thank-you {
@@ -307,9 +327,14 @@
                 <div class="details">
                   <div class="des">
                     <h2>شكرًا <br />لتسوّقك معنا!</h2>
+                    <h4>لقد تم تأكيد طلبك.</h4>
+                    <p>رقم الطلب: <span class="serial">500008458</span></p>
                   </div>
                 </div>
                 <div class="infos">
+                  <h4>
+                    لتقديم طلب التقسيط ، يرجى الاتصال بالبنك الذي تتعامل معه.
+                  </h4>
                   <h3>هل أنت الرابح أم لا؟</h3>
                 </div>
                 <div class="boxs" id="js-container">
@@ -317,7 +342,7 @@
                     class="canvas"
                     id="js-canvas"
                     width="369"
-                    height="83"
+                    height="82"
                   ></canvas>
                   <div class="form" style="visibility: hidden">
                     <h2>مبروك! ربحت مكيف سبليت</h2>
@@ -333,7 +358,6 @@
         </div>
       </div>
     </div>
-
     <script src="scratch-ar.js"></script>
   </body>
 </html>

@@ -4,24 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scratch New</title>
+    <title>Cool Friday</title>
     <style>
       @font-face {
         font-family: "Maurea-BoldLf";
         src: url("fonts/Maurea-BoldLf.otf") format("opentype");
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: "MaureaJciLfML-Medium";
-        src: url("fonts/MaureaJciLfML-Medium.otf") format("opentype");
-        font-weight: lighter;
+        font-weight: bold;
         font-style: normal;
       }
       @font-face {
-        font-family: "MaureaJciLfML-Regular";
-        src: url("fonts/MaureaJciLfML-Regular.otf") format("opentype");
+        font-family: "Maurea-Medium";
+        src: url("fonts/Maurea-Medium.otf") format("opentype");
+        font-weight: medium;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Maurea-Light";
+        src: url("fonts/Maurea-Light.otf") format("opentype");
         font-weight: lighter;
         font-style: normal;
       }
@@ -38,25 +37,31 @@
       h3,
       h4,
       p {
-        color: #151515;
+        color: #fff;
       }
       h2,
       h3 {
         font-family: "Maurea-BoldLf";
       }
       p {
-        font-family: "MaureaJciLfML-Medium";
+        font-family: "Maurea-Medium";
       }
       span {
-        font-family: "MaureaJciLfML-Regular";
+        font-family: "Maurea-Light";
       }
       .hero-bg {
-        background: url("https://york.com.sa/images/uploaded/media-center/scratch-new.jpg")
+        background: url("https://york.com.sa/images/uploaded/york-friday/hero-bg.jpg")
           center center no-repeat;
         background-size: cover;
         width: 100%;
         height: 100vh;
         position: relative;
+      }
+      @media screen and (max-width: 767px) {
+        .hero-bg {
+          background: url("https://york.com.sa/images/uploaded/york-friday/hero-mob.jpg")
+            center center no-repeat;
+        }
       }
       .thank-you {
         font-family: "Maurea-BoldLf";
@@ -82,6 +87,14 @@
         width: 100%;
         height: 100vh;
       }
+      @media screen and (max-width: 767px) {
+        .scratch .win {
+          background: rgba(255, 255, 255, 0.2);
+          margin: 0 auto;
+          border-radius: 5px;
+          backdrop-filter: blur(2px);
+        }
+      }
       .scratch .win .des h2 {
         font-size: 38px;
         font-weight: bold;
@@ -95,10 +108,12 @@
       .scratch .win .des h4,
       .scratch .win .des p {
         font-size: 20px;
+        font-family: "Maurea-Medium";
       }
       .scratch .win .des p {
         text-align: center;
         padding: 15px 0;
+        font-family: "Maurea-Medium";
       }
       .scratch .infos h4 {
         padding-bottom: 10px;
@@ -218,6 +233,9 @@
       .boxs .form p {
         margin: 30px auto 0;
       }
+      .boxs .form h2 {
+        color: #fff;
+      }
       .york-air {
         width: 300px;
         height: auto;
@@ -231,6 +249,7 @@
       @media screen and (max-width: 767px) {
         .thank-you {
           width: 100%;
+          right: 0;
         }
         .scratch .info h3 {
           font-size: 32px;
@@ -307,18 +326,15 @@
           <div class="scratch">
             <div class="container">
               <div class="win">
-                <div class="york-air">
-                  <img
-                    src="https://york.com.sa/images/uploaded/media-center/york-air.png"
-                    alt="York Air conditioning"
-                  />
-                </div>
                 <div class="details">
                   <div class="des">
                     <h2>Thank you for <br />shopping with us!</h2>
+                    <h4>Your order is confirmed.</h4>
+                    <p>Order number: <span class="serial">500008458</span></p>
                   </div>
                 </div>
                 <div class="infos">
+                  <h4>To apply for installments, please contact your bank.</h4>
                   <h3>Are You A Winner, Or Not?</h3>
                 </div>
                 <div class="boxs" id="js-container">
@@ -328,15 +344,16 @@
                     width="369"
                     height="83"
                   ></canvas>
-                  < <h2>
-                    Congratulations! <br />
-                    You Won Free AC Split
-                  </h2>
+                  <div class="form" style="visibility: hidden">
+                    <h2>
+                      Congratulations! <br />
+                      You Won Free AC Split
+                    </h2>
 
-                  <!-- Loose Message -->
-                  <!-- <h2>
-                    Better Luck Next Time!
-                  </h2> -->
+                    <!-- Loose Message -->
+                    <!-- <h2>
+                      Better Luck Next Time!
+                    </h2> -->
                   </div>
                 </div>
               </div>
@@ -345,6 +362,8 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
     <script src="scratch.js"></script>
   </body>
 </html>

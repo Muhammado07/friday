@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bundle</title>
+    <style>
+      /* Fonts */
+      @font-face {
+        font-family: "GE Dinar One Bold";
+        src: url("fonts/GE\ Dinar\ One\ Bold.otf") format("opentype");
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "GE Dinar One Medium";
+        src: url("fonts/GE\ Dinar\ One\ Medium.otf") format("opentype");
+        font-weight: medium;
+        font-style: normal;
+      }
+      *,
+      ::after,
+      ::before {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: #fafafa;
+        outline: none;
+        direction: rtl;
+      }
+      *,
+      a,
+      div,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      html,
+      img,
+      li,
+      p,
+      span {
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: geometricPrecision;
+      }
+      .container {
+        width: 100%;
+        padding-right: 24px;
+        padding-left: 24px;
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+        max-width: 1440px;
+        margin: auto;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: var(--second-color);
+      }
+      /* =================================== */
+
+      .bundle-week {
+        background: #fbfbfb;
+        padding: 40px 0;
+        position: relative;
+      }
+
+      .friday-banner {
+        background-size: cover;
+        position: relative;
+        height: 150px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: 30px;
+        flex-direction: row-reverse;
+      }
+      .sale-banner {
+        background: url("https://york.com.sa/images/uploaded/york-friday/cool-friday.gif")
+          center center no-repeat;
+        background-size: cover;
+        position: relative;
+        height: 250px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: 30px;
+      }
+      @media screen and (max-width: 767px) {
+        .sale-banner {
+          height: 70px;
+        }
+      }
+      .link-friday {
+        text-decoration: none;
+        color: #151515;
+      }
+      .friday-banner h1 {
+        color: #151515;
+        padding-left: 30px;
+        font-family: "GE Dinar One Bold";
+      }
+      .count-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+      }
+      #clockdiv {
+        color: #fff;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-items: center;
+        font-weight: 100;
+        text-align: center;
+        width: 330px;
+        height: 150px;
+        position: absolute;
+        right: 0;
+        font-family: "GE Dinar One Bold";
+      }
+
+      #clockdiv div > span {
+        padding: 20px;
+        border-radius: 3px;
+        background: #151515;
+        display: inline-block;
+        font-size: 22px;
+      }
+
+      .smalltext {
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: #151515;
+      }
+
+      @media screen and (max-width: 767px) {
+        .friday-banner {
+          flex-direction: column;
+          height: 190px;
+        }
+        .friday-banner h1 {
+          padding-left: 0;
+        }
+        #clockdiv {
+          width: 100%;
+          height: auto;
+          bottom: 10px;
+        }
+      }
+
+      .friday-bundle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .friday-bundle .bundle-title {
+        text-align: center;
+        margin: 20px auto;
+        color: #151515;
+        font-family: "Maurea-Medium";
+      }
+      .products-wrapper .tabs-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        justify-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        grid-gap: 10px;
+      }
+      .products-wrapper .tabs-wrapper .tab-item {
+        min-width: -webkit-min-content;
+        min-width: -moz-min-content;
+        min-width: min-content;
+        width: auto;
+        height: auto;
+        align-self: center;
+        text-align: center;
+        cursor: pointer;
+        padding: 0;
+        transition: all 0.3s ease-in-out;
+      }
+      .products-wrapper .tabs-wrapper .tab-item.active {
+        transform: scale(0.95);
+        transition: all 0.2s ease-in-out;
+      }
+      .products-wrapper .tabs-wrapper .tab-item img {
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+      }
+      .products-wrapper .tabbed-content {
+        height: -webkit-min-content;
+        height: -moz-min-content;
+        height: min-content;
+      }
+      .products-wrapper .tabbed-content .item-content {
+        width: 100%;
+        display: none;
+        grid-auto-rows: repeat(auto-fit, minmax(auto, -webkit-max-content));
+        grid-auto-rows: repeat(auto-fit, minmax(auto, max-content));
+        grid-gap: 2rem;
+        opacity: 0;
+        transition: all 0.5s ease-out;
+      }
+      .products-wrapper .tabbed-content .item-content.active {
+        display: grid;
+        opacity: 1;
+        transition: all 0.5s ease-out;
+      }
+      .friday-bundle .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        justify-content: center;
+        align-items: center;
+        grid-gap: 20px;
+      }
+      .friday-bundle .products .product {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #d9dad8;
+        border-radius: 3px;
+        padding: 20px;
+        background: #fff;
+      }
+      .friday-bundle .products .product .price-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .friday-bundle .products .product .product-img {
+        margin: 20px auto;
+        width: 160px;
+        height: 100%;
+      }
+      .friday-bundle .products .product .product-img img {
+        width: 100%;
+        height: 100%;
+      }
+      .friday-bundle .products .product .desc .title {
+        font-size: 16px;
+        font-weight: 400;
+        font-family: "GE Dinar One Bold";
+        color: #151515;
+      }
+      .friday-bundle .products .product .price-info .price-details {
+        padding: 10px 0 20px;
+      }
+      .friday-bundle .products .product .price-info .price-details .new-price {
+        font-size: 24px;
+        font-family: "GE Dinar One Bold";
+        color: #151515;
+      }
+      .friday-bundle .products .product .price-info .price-details {
+        padding: 10px 0 20px;
+        font-family: "GE Dinar One Bold";
+      }
+      .friday-bundle .products .product .price-info .price-details .new-price {
+        font-size: 24px;
+      }
+      .friday-bundle .products .product .price-info .price-details .old-price {
+        display: flex;
+      }
+      .friday-bundle
+        .products
+        .product
+        .price-info
+        .price-details
+        .old-price
+        .dashed-price {
+        font-weight: 100;
+        text-decoration: line-through;
+        font-size: 14px;
+        opacity: 0.5;
+      }
+      .friday-bundle
+        .products
+        .product
+        .price-info
+        .price-details
+        .old-price
+        .off-price {
+        padding-right: 10px;
+        color: #38ae04;
+        font-size: 14px;
+      }
+      .bundle-week .bundle-unit {
+        margin-top: 40px;
+      }
+      .bundle-week .bundle-unit .single-unit {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        justify-content: center;
+        align-content: center;
+        grid-gap: 10px;
+        margin-top: 30px;
+      }
+      .bundle-week .bundle-unit .single-unit a img {
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+      }
+      @media screen and (max-width: 767px) {
+        .products-wrapper .tabs-wrapper {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bundle-week">
+      <div class="container">
+        <div class="sale-banner"></div>
+        <div class="bundle-details">
+          <div class="friday-banner">
+            <div class="text-hero">
+              <h1>عرض كول فرايداي</h1>
+            </div>
+            <div id="clockdiv">
+              <div>
+                <div class="smalltext">يوم</div>
+                <span class="days">25</span>
+              </div>
+              <div>
+                <div class="smalltext">ساعات</div>
+                <span class="hours">04</span>
+              </div>
+              <div>
+                <div class="smalltext">دقائق</div>
+                <span class="minutes">59</span>
+              </div>
+              <div>
+                <div class="smalltext">ثواني</div>
+                <span class="seconds">36</span>
+              </div>
+            </div>
+          </div>
+          <div class="friday-bundle">
+            <div class="show-me">
+              <div class="products-wrapper">
+                <div class="tabs-wrapper">
+                  <div class="tab-item">
+                    <img
+                      src="https://york.com.sa/images/uploaded/york-friday/bundle1-ar.jpg"
+                      alt="show icon"
+                    />
+                  </div>
+                  <div class="tab-item">
+                    <img
+                      src="https://york.com.sa/images/uploaded/york-friday/bundle2-ar.jpg"
+                      alt="rainbow icon"
+                    />
+                  </div>
+                  <div class="tab-item">
+                    <img
+                      src="https://york.com.sa/images/uploaded/york-friday/bundle3-ar.jpg"
+                      alt="thunder icon"
+                    />
+                  </div>
+                  <div class="tab-item">
+                    <img
+                      src="https://york.com.sa/images/uploaded/york-friday/bundle4-ar.jpg"
+                      alt="cloudy icon"
+                    />
+                  </div>
+                </div>
+                <div class="tabbed-content">
+                  <div class="item-content">
+                    <div class="products">
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-1.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              فروست تبريد فقط | 18,000 وحدة*+ ميلينيوم كمبرسور
+                              دوّار تبريد فقط 17,200 وحدة
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">5,954 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">6,577 ريال</p>
+                                  <p class="off-price">خصم 623</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-1.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              فروست تبريد وتدفئة | 18,000 وحدة*+ ميلينيوم
+                              كمبرسور دوّار تبريد فقط 17,200 وحدة
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">6,122 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">6,757 ريال</p>
+                                  <p class="off-price">خصم 635</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-1.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              فروست تبريد فقط | 22,000 وحدة*+ ميلينيوم كمبرسور
+                              دوّار تبريد فقط 21,000 وحدة
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">6,845 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">7,526 ريال</p>
+                                  <p class="off-price">خصم 681</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <div class="products">
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-2.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              فروست تبريد فقط | 18,000 وحدة*+ ميلينيوم كمبرسور
+                              دوّار تبريد فقط 17,200 وحدة
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">8,493 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">9,396 ريال</p>
+                                  <p class="off-price">خصم 903</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-2.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              فروست تبريد فقط | 22,000 وحدة*+ فروست تبريد وتدفئة
+                              | 18,000 وحدة* ميلينيوم كمبرسور دوّار تبريد فقط
+                              21,000 وحدة
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">8,909 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">9,835 ريال</p>
+                                  <p class="off-price">خصم 926</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-2.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              فروست تبريد وتدفئة | 18,000 وحدة*+ ميلينيوم
+                              كمبرسور دوّار تبريد فقط 17,200 وحدة
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">8,493 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">9,396 ريال</p>
+                                  <p class="off-price">خصم 903</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <div class="products">
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-3.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              فروست تبريد فقط | 18,000 وحدة*+ ميلينيوم كمبرسور
+                              دوّار تبريد فقط | 17,200 وحدة* +تروبيكال مكيف
+                              دولابي تبريد فقط | 51,000 وحدة*
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">14,443 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">15,777 ريال</p>
+                                  <p class="off-price">خصم 1,334</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-3.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              فروست تبريد وتدفئة | 22,000 وحدة*+ ميلينيوم
+                              كمبرسور دوّار تبريد فقط | 17,200 وحدة* +تروبيكال
+                              مكيف دولابي تبريد فقط | 51,000 وحدة*
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">14,611 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">15,957 ريال</p>
+                                  <p class="off-price">خصم 1,346</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-3.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              فروست تبريد فقط | 22,000 وحدة*+ ميلينيوم كمبرسور
+                              دوّار تبريد فقط | 17,200 وحدة* +تروبيكال مكيف
+                              دولابي تبريد فقط | 51,000 وحدة*
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">15,225 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">16,617 ريال</p>
+                                  <p class="off-price">خصم 1,392</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <div class="products">
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-4.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              فروست تبريد فقط | 18,000 وحدة* | كفاءة الطاقة د
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">6,862 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">7,647 ريال</p>
+                                  <p class="off-price">خصم 785</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-4.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              آيسبيرج تبريد فقط | 18,000 وحدة* |كفاءة الطاقة د
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">7,028 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">7,827 ريال</p>
+                                  <p class="off-price">خصم 799</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="product">
+                        <a href="#">
+                          <div class="product-img">
+                            <img
+                              src="https://york.com.sa/images/uploaded/york-friday/bundle-4.jpg"
+                              alt="York Split AC"
+                            />
+                          </div>
+
+                          <div class="desc">
+                            <h3 class="title">
+                              فروست تبريد وتدفئة | 18,000 وحدة* | كفاءة الطاقة د
+                            </h3>
+                            <div class="price-info">
+                              <div class="price-details">
+                                <h3 class="new-price">7,114 ريال</h3>
+                                <div class="old-price">
+                                  <p class="dashed-price">7,917 ريال</p>
+                                  <p class="off-price">خصم 803</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bundle-unit">
+            <h1>الوحدة الواحدة</h1>
+            <div class="single-unit">
+              <a href="#" target="_blank"
+                ><img
+                  src="https://york.com.sa/images/uploaded/york-friday/split-ac-ar.jpg"
+                  alt="YORK Cool Friday"
+              /></a>
+              <a href="#" target="_blank"
+                ><img
+                  src="https://york.com.sa/images/uploaded/york-friday/window-ac-ar.jpg"
+                  alt="YORK Cool Friday"
+              /></a>
+              <a href="#" target="_blank"
+                ><img
+                  src="https://york.com.sa/images/uploaded/york-friday/freestand-ac-ar.jpg"
+                  alt="YORK Cool Friday"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function contentTabs() {
+        // set initial tab of choice
+        const initialTab = 0;
+
+        // -------------------------------------------------
+
+        // declare vars
+        let i;
+        // check if container/wrapper exist
+        const containerActive = document.getElementsByClassName("tabs-wrapper");
+        // put all tab-items into a variable
+        const tabButton = document.querySelectorAll(".tab-item");
+        // put all item-contents into a variable
+        const tabContent = document.querySelectorAll(".item-content");
+
+        if (containerActive.length >= 1) {
+          runTabs();
+        }
+
+        function runTabs() {
+          /* maintenance mode, check amount of tab-items is same as item-content.
+-- if isn't, suggest "warn" ways to ommit error messages. */
+          function initChecks() {
+            // clear all active classes
+            clearActive();
+            // check element numbers are correct
+            if (tabButton.length < tabContent.length) {
+              // if there are less buttons than content tabs
+              console.warn(
+                "You need to have the same amount of tab-item's as you have content-tab's"
+              );
+              console.group(
+                "Paste this emmet shorthand inside the 'tabs-wrapper' div and press enter/tab"
+              );
+              console.log("div.tab-item{tab-title}");
+              console.groupEnd();
+            } else if (tabContent.length < tabButton.length) {
+              // if there are less content tabs than buttons
+              console.warn(
+                "You need to have the same amount of content-tab's as you have tab-items's"
+              );
+              console.group(
+                "Paste this emmet shorthand inside the 'tabbed-content' div and press enter/tab"
+              );
+              console.log(
+                "div.item-content>div.hightlights*4>h4{some title}+p{some copy}"
+              );
+              console.groupEnd();
+            } else {
+              tabContent[initialTab].classList.add("active");
+              tabButton[initialTab].classList.add("active");
+            }
+          }
+          initChecks();
+
+          /* self calling function to clear all active classed from group of tabs
+    -- if user has added active class for some wierd reason */
+          function clearActive() {
+            // cycle through all elements with class="tab-item" and remove "active".
+            for (i = 0; i < tabContent.length; i++) {
+              tabContent[i].classList.remove("active");
+              tabButton[i].classList.remove("active");
+            }
+          }
+
+          // add event listeners to all elements with tab-item class and wait for click
+          for (let tabIndex = 0; tabIndex < tabButton.length; tabIndex++) {
+            tabButton[tabIndex].addEventListener("click", function () {
+              // clear all active class's from the group of tabs.
+              clearActive();
+              // select item-content with the same index as the clicked tab-item and add an active class.
+              tabContent[tabIndex].classList.toggle("active");
+              tabButton[tabIndex].classList.toggle("active");
+            });
+          }
+        }
+      }
+      contentTabs();
+
+      // CountDown
+
+      const countDownDate = new Date("Nov 17, 2021 23:59:59").getTime();
+
+      const clock = document.getElementById("clockdiv");
+      const daysSpan = clock.querySelector(".days");
+      const hoursSpan = clock.querySelector(".hours");
+      const minutesSpan = clock.querySelector(".minutes");
+      const secondsSpan = clock.querySelector(".seconds");
+
+      // Update the count down every 1 second
+      const x = setInterval(function () {
+        // Get today's date and time
+        const now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        const distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        daysSpan.innerHTML = ("0" + days).slice(-2);
+        hoursSpan.innerHTML = ("0" + hours).slice(-2);
+        minutesSpan.innerHTML = ("0" + minutes).slice(-2);
+        secondsSpan.innerHTML = ("0" + seconds).slice(-2);
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("clockdiv").innerHTML = "Offer is Ended";
+          document.getElementById("clockdiv").style.cssText = `
+            
+            display: block;
+            color: white;
+            font-size: 26px;
+            background: #00539e;
+            padding: 20px;
+            text-align: center;
+            height: auto;
+            font-weight: bold
+            `;
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
