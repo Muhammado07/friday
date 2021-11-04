@@ -202,14 +202,16 @@ a {
   background: #fafafa;
   height: 100vh;
   position: relative;
-  background: url(img/hero-bg.jpg) center center no-repeat;
+  background: url(https://york.com.sa/images/uploaded/york-friday/hero-bg.jpg)
+    center center no-repeat;
   background-size: cover;
 }
 .ar .cool-friday {
   background: #fafafa;
   height: 100vh;
   position: relative;
-  background: url(img/hero-bg-ar.jpg) center center no-repeat;
+  background: url(https://york.com.sa/images/uploaded/york-friday/hero-bg-ar.jpg)
+    center center no-repeat;
   background-size: cover;
 }
 .cool-friday .details {
@@ -223,7 +225,8 @@ a {
 @media screen and (max-width: 767px) {
   .cool-friday,
   .ar .cool-friday {
-    background: url(img/hero-mob.jpg) center center no-repeat;
+    background: url(https://york.com.sa/images/uploaded/york-friday/hero-mob.jpg)
+      center center no-repeat;
   }
   .cool-friday .details {
     grid-template-columns: 1fr;
