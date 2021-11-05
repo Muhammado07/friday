@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bundle</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <style>
       /* Countdown */
       @font-face {
@@ -338,9 +342,54 @@
         height: 100%;
         border-radius: 3px;
       }
+      .swiper {
+        display: none;
+      }
       @media screen and (max-width: 767px) {
         .products-wrapper .tabs-wrapper {
           grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        .friday-bundle .products.pro-web {
+          display: none !important;
+        }
+        .swiper {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+        .swiper .products {
+          display: flex;
+          justify-content: flex-start;
+          grid-gap: 0;
+        }
+        .swiper .products .product .price-info {
+          justify-content: center;
+        }
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fbfbfb;
+
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        }
+
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
     </style>
@@ -404,7 +453,7 @@
                 </div>
                 <div class="tabbed-content">
                   <div class="item-content">
-                    <div class="products">
+                    <div class="products pro-web">
                       <div class="product">
                         <a href="#">
                           <div class="product-img">
@@ -484,9 +533,98 @@
                         </a>
                       </div>
                     </div>
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper products">
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-1.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  FROST Cool Only | 18,000 BTU* + Millennium
+                                  Rotary Compressor Cool Only | 17,200 BTU*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 5,954</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 6,577</p>
+                                      <p class="off-price">SAVE 623</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-1.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  FROST Cool/Heat | 18,000 BTU* + Millennium
+                                  Rotary Compressor Cool Only | 17,200 BTU*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 6,122</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 6,757</p>
+                                      <p class="off-price">SAVE 635</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-1.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  FROST Cool Only | 22,000 BTU* +Millennium
+                                  Rotary Compressor Cool Only | 21,000 BTU*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 6,845</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 7,526</p>
+                                      <p class="off-price">SAVE 681</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
                   </div>
                   <div class="item-content">
-                    <div class="products">
+                    <div class="products pro-web">
                       <div class="product">
                         <a href="#">
                           <div class="product-img">
@@ -567,9 +705,99 @@
                         </a>
                       </div>
                     </div>
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper products">
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-2.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  FROST Cool Only | 18,000 BTU* + Millennium
+                                  Rotary Compressor Cool Only | 17,200 BTU*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 8,493</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 9,396</p>
+                                      <p class="off-price">SAVE 903</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-2.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  FROST Cool Only | 22,000 BTU* + FROST
+                                  Cool/Heat | 18,000 BTU* +Millennium Rotary
+                                  Compressor Cool Only | 21,000 BTU*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 8,909</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 9,835</p>
+                                      <p class="off-price">SAVE 926</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-2.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  FROST Cool/Heat | 18,000 BTU* + Millennium
+                                  Rotary Compressor Cool Only | 17,200 BTU*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 8,493</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 9,396</p>
+                                      <p class="off-price">SAVE 903</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
                   </div>
                   <div class="item-content">
-                    <div class="products">
+                    <div class="products pro-web">
                       <div class="product">
                         <a href="#">
                           <div class="product-img">
@@ -652,9 +880,102 @@
                         </a>
                       </div>
                     </div>
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper products">
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-3.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  FROST Cool Only | 18,000 BTU* + Millennium
+                                  Rotary Compressor Cool Only | 17,200 BTU*
+                                  +Tropical Floor Standing | 51,000 BTU Cool
+                                  Only
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 14,443</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 15,777</p>
+                                      <p class="off-price">SAVE 1,334</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-3.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  FROST Cool/Heat | 18,000 BTU* + Millennium
+                                  Rotary Compressor Cool Only | 17,200 BTU* +
+                                  Tropical Floor Standing | 51,000 BTU Cool Only
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 14,611</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 15,957</p>
+                                      <p class="off-price">SAVE 1,346</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-3.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  FROST Cool Only | 22,000 BTU*+Millennium
+                                  Rotary Compressor Cool Only | 17,200 BTU* +
+                                  Tropical Floor Standing | 51,000 BTU Cool Only
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 15,225</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 16,617</p>
+                                      <p class="off-price">SAVE 1,392</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
                   </div>
                   <div class="item-content">
-                    <div class="products">
+                    <div class="products pro-web">
                       <div class="product">
                         <a href="#">
                           <div class="product-img">
@@ -727,6 +1048,92 @@
                         </a>
                       </div>
                     </div>
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper products">
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-4.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  FROST Cool Only | 18,000 BTU*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 6,862</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 7,647</p>
+                                      <p class="off-price">SAVE 785</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-4.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  ICEBERG Cool Only | 18,000 BTU*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 7,028</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 7,827</p>
+                                      <p class="off-price">SAVE 799</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-4.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  FROST Cool/Heat | 18,000 BTU*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">SR 7,114</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">SR 7,917</p>
+                                      <p class="off-price">SAVE 803</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -756,6 +1163,9 @@
         </div>
       </div>
     </div>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script>
       function contentTabs() {
         // set initial tab of choice
@@ -778,7 +1188,7 @@
 
         function runTabs() {
           /* maintenance mode, check amount of tab-items is same as item-content.
--- if isn't, suggest "warn" ways to ommit error messages. */
+      -- if isn't, suggest "warn" ways to ommit error messages. */
           function initChecks() {
             // clear all active classes
             clearActive();
@@ -813,7 +1223,7 @@
           initChecks();
 
           /* self calling function to clear all active classed from group of tabs
-    -- if user has added active class for some wierd reason */
+          -- if user has added active class for some wierd reason */
           function clearActive() {
             // cycle through all elements with class="tab-item" and remove "active".
             for (i = 0; i < tabContent.length; i++) {
@@ -872,18 +1282,28 @@
           clearInterval(x);
           document.getElementById("clockdiv").innerHTML = "Offer is Ended";
           document.getElementById("clockdiv").style.cssText = `
-            
-            display: block;
-            color: white;
-            font-size: 26px;
-            background: #00539e;
-            padding: 20px;
-            text-align: center;
-            height: auto;
-            font-weight: bold
-            `;
+
+                  display: block;
+                  color: white;
+                  font-size: 26px;
+                  background: #00539e;
+                  padding: 20px;
+                  text-align: center;
+                  height: auto;
+                  font-weight: bold
+                  `;
         }
       }, 1000);
+
+      // Swiper
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
     </script>
   </body>
 </html>

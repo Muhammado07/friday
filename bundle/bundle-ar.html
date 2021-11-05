@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bundle</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <style>
       /* Fonts */
       @font-face {
@@ -97,7 +101,7 @@
         flex-direction: row-reverse;
       }
       .sale-banner {
-        background: url("https://york.com.sa/images/uploaded/york-friday/cool-friday.gif")
+        background: url("https://york.com.sa/images/uploaded/york-friday/cool-friday-ar.gif")
           center center no-repeat;
         background-size: cover;
         position: relative;
@@ -334,9 +338,54 @@
         height: 100%;
         border-radius: 3px;
       }
+      .swiper {
+        display: none;
+      }
       @media screen and (max-width: 767px) {
         .products-wrapper .tabs-wrapper {
           grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        .friday-bundle .products.pro-web {
+          display: none !important;
+        }
+        .swiper {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+        .swiper .products {
+          display: flex;
+          justify-content: flex-start;
+          grid-gap: 0;
+        }
+        .swiper .products .product .price-info {
+          justify-content: center;
+        }
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fbfbfb;
+
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        }
+
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
     </style>
@@ -400,7 +449,7 @@
                 </div>
                 <div class="tabbed-content">
                   <div class="item-content">
-                    <div class="products">
+                    <div class="products pro-web">
                       <div class="product">
                         <a href="#">
                           <div class="product-img">
@@ -480,9 +529,98 @@
                         </a>
                       </div>
                     </div>
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper products">
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-1.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  فروست تبريد فقط | 18,000 وحدة*+ ميلينيوم
+                                  كمبرسور دوّار تبريد فقط 17,200 وحدة
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">5,954 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">6,577 ريال</p>
+                                      <p class="off-price">خصم 623</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-1.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  فروست تبريد وتدفئة | 18,000 وحدة*+ ميلينيوم
+                                  كمبرسور دوّار تبريد فقط 17,200 وحدة
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">6,122 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">6,757 ريال</p>
+                                      <p class="off-price">خصم 635</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-1.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  فروست تبريد فقط | 22,000 وحدة*+ ميلينيوم
+                                  كمبرسور دوّار تبريد فقط 21,000 وحدة
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">6,845 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">7,526 ريال</p>
+                                      <p class="off-price">خصم 681</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
                   </div>
                   <div class="item-content">
-                    <div class="products">
+                    <div class="products pro-web">
                       <div class="product">
                         <a href="#">
                           <div class="product-img">
@@ -563,9 +701,99 @@
                         </a>
                       </div>
                     </div>
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper products">
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-2.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  فروست تبريد فقط | 18,000 وحدة*+ ميلينيوم
+                                  كمبرسور دوّار تبريد فقط 17,200 وحدة
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">8,493 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">9,396 ريال</p>
+                                      <p class="off-price">خصم 903</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-2.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  فروست تبريد فقط | 22,000 وحدة*+ فروست تبريد
+                                  وتدفئة | 18,000 وحدة* ميلينيوم كمبرسور دوّار
+                                  تبريد فقط 21,000 وحدة
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">8,909 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">9,835 ريال</p>
+                                      <p class="off-price">خصم 926</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-2.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  فروست تبريد وتدفئة | 18,000 وحدة*+ ميلينيوم
+                                  كمبرسور دوّار تبريد فقط 17,200 وحدة
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">8,493 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">9,396 ريال</p>
+                                      <p class="off-price">خصم 903</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
                   </div>
                   <div class="item-content">
-                    <div class="products">
+                    <div class="products pro-web">
                       <div class="product">
                         <a href="#">
                           <div class="product-img">
@@ -648,9 +876,101 @@
                         </a>
                       </div>
                     </div>
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper products">
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-3.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  فروست تبريد فقط | 18,000 وحدة*+ ميلينيوم
+                                  كمبرسور دوّار تبريد فقط | 17,200 وحدة*
+                                  +تروبيكال مكيف دولابي تبريد فقط | 51,000 وحدة*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">14,443 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">15,777 ريال</p>
+                                      <p class="off-price">خصم 1,334</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-3.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  فروست تبريد وتدفئة | 22,000 وحدة*+ ميلينيوم
+                                  كمبرسور دوّار تبريد فقط | 17,200 وحدة*
+                                  +تروبيكال مكيف دولابي تبريد فقط | 51,000 وحدة*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">14,611 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">15,957 ريال</p>
+                                      <p class="off-price">خصم 1,346</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-3.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  فروست تبريد فقط | 22,000 وحدة*+ ميلينيوم
+                                  كمبرسور دوّار تبريد فقط | 17,200 وحدة*
+                                  +تروبيكال مكيف دولابي تبريد فقط | 51,000 وحدة*
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">15,225 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">16,617 ريال</p>
+                                      <p class="off-price">خصم 1,392</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
                   </div>
                   <div class="item-content">
-                    <div class="products">
+                    <div class="products pro-web">
                       <div class="product">
                         <a href="#">
                           <div class="product-img">
@@ -727,6 +1047,95 @@
                         </a>
                       </div>
                     </div>
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper products">
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-4.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  فروست تبريد فقط | 18,000 وحدة* | كفاءة الطاقة
+                                  د
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">6,862 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">7,647 ريال</p>
+                                      <p class="off-price">خصم 785</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-4.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  آيسبيرج تبريد فقط | 18,000 وحدة* |كفاءة الطاقة
+                                  د
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">7,028 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">7,827 ريال</p>
+                                      <p class="off-price">خصم 799</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="product">
+                            <a href="#">
+                              <div class="product-img">
+                                <img
+                                  src="https://york.com.sa/images/uploaded/york-friday/bundle-4.jpg"
+                                  alt="York Split AC"
+                                />
+                              </div>
+
+                              <div class="desc">
+                                <h3 class="title">
+                                  فروست تبريد وتدفئة | 18,000 وحدة* | كفاءة
+                                  الطاقة د
+                                </h3>
+                                <div class="price-info">
+                                  <div class="price-details">
+                                    <h3 class="new-price">7,114 ريال</h3>
+                                    <div class="old-price">
+                                      <p class="dashed-price">7,917 ريال</p>
+                                      <p class="off-price">خصم 803</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -756,6 +1165,8 @@
         </div>
       </div>
     </div>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
       function contentTabs() {
         // set initial tab of choice
@@ -884,6 +1295,16 @@
             `;
         }
       }, 1000);
+
+      // Swiper
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
     </script>
   </body>
 </html>
