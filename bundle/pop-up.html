@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .cool-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        z-index: 9999999999;
+      }
+      .cool-popup.coolme {
+        top: -100%;
+      }
+      .cool-popup .divid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .cool-popup .divid .pop-img {
+        width: 500px;
+        height: 500px;
+        position: relative;
+      }
+      .cool-popup .divid .pop-img img {
+        width: 100%;
+        height: 100%;
+      }
+      .cool-popup .divid .close-cool {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #151515;
+        padding: 15px;
+        cursor: pointer;
+      }
+      .cool-popup .divid .close-cool img {
+        width: 15px;
+        height: 15px;
+      }
+
+      @media screen and (max-width: 767px) {
+        .cool-popup .divid .pop-img {
+          width: 350px;
+          height: 350px;
+          max-width: 100%;
+          display: block;
+        }
+      }
+      @media screen and (max-width: 320px) {
+        .cool-popup .divid .pop-img {
+          width: 250px;
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cool-popup">
+      <div class="divid">
+        <div class="pop-img">
+          <img
+            src="https://york.com.sa/images/uploaded/york-friday/cool-popup.png"
+            alt="YORK Cool Friday"
+          />
+        </div>
+        <div class="close-cool">
+          <img
+            src="https://york.com.sa/images/uploaded/york-friday/close.png"
+            alt="Close"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const coolPop = document.querySelector(".cool-popup");
+      const exitPop = document.querySelector(".divid");
+      const closeCool = document.querySelector(".close-cool");
+
+      closeCool.addEventListener("click", function () {
+        coolPop.classList.add("coolme");
+      });
+      exitPop.addEventListener("click", function () {
+        coolPop.classList.add("coolme");
+      });
+    </script>
+  </body>
+</html>
